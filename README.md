@@ -1,1 +1,1 @@
-# terraform - this branch is used for Terraform
+# terraform - this REPO is used for Terraform
