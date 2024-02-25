@@ -1,0 +1,6 @@
+# vytvori novy namespace
+
+apiVersion: "v1"
+kind: "Namespace"
+metadata:
+  name: "martinus-nginx-test"

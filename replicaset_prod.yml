@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: prod
+  labels:
+    app: nginx-hello
+    tier: prod
+spec:
+  # modify replicas according to your case
+  replicas: 3
+  selector:
+    matchLabels:
+      tier: prod
+  template:
+    metadata:
+      labels:
+        tier: prod
+    spec:
+      containers:
+      - name: nginx-hello
+        image: nginxdemos/hello
+        ports:
+        - containerPort: 80
