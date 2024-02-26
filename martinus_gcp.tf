@@ -12,17 +12,17 @@ variable "region" {
 }
 
 variable "docker_image" {
-  description = "image dockeru pro nasazení na virtuální počítače"
-  default     = "nginxinc/nginx-unprivileged:1.19.1-alpine"
+  description = "image dockeru pro VPC"
+  default     = "nginxdemos/hello"
 }
 
 variable "dev_instance_count" {
-  description = "Počet instancí pro DEV prostředí"
+  description = "Počet instancí pro DEV"
   default     = 2
 }
 
 variable "prod_instance_count" {
-  description = "Počet instancí pro PROD prostředí"
+  description = "Počet instancí pro PROD"
   default     = 3
 }
 
