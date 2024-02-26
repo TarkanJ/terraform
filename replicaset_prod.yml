@@ -2,6 +2,7 @@ apiVersion: apps/v1
 kind: ReplicaSet
 metadata:
   name: prod
+  namespace: martinus-nginx-test
   labels:
     app: nginx-hello
     tier: prod

@@ -1,0 +1,25 @@
+# cronjob2.yaml
+# testing periodical message by simple output on stdout
+
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: cronjob-hello
+  namespace: martinus-nginx-test
+spec:
+# every 2 minutes
+# schedule: "*/2 * * * *"
+  schedule: "* * * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: nginx-hello
+            image: busybox:1.28
+            imagePullPolicy: IfNotPresent
+            command:
+            - /bin/sh
+            - -c
+            - date; echo from Kubernetes with Love to Boys from Deutsche Börse!
+          restartPolicy: OnFailure

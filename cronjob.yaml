@@ -1,0 +1,21 @@
+# cronjob.yaml
+# calling out the load balancer every 2 minutes
+
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: lb-check
+  namespace: martinus-nginx-test
+spec:
+  # every 2 minutes
+  schedule: "*/2 * * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: nginx-hello
+            image: curlimages/curl:latest
+            # -v quite verbose parameter! :)
+            command: ["curl -v  http://localhost:43903"] 
+          restartPolicy: OnFailure
