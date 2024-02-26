@@ -1,6 +1,8 @@
 # Only rough Terraform manifest file
+# Project name: Martinus First Project
+# Project number: 621399946223
 
-variable "Martinus First Project" {
+variable "tactical-sonar-415218" {
   description = "ID projektu v GCP"
 }
 
